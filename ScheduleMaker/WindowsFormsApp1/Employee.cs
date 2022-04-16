@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ScheduleMaker
 {
-    internal class Employee
+    public class Employee
     {
-        private List<Employee> employeesList = new List<Employee>();
-        private string m_FirstName { get; set; }
-        private string m_LastName { get; set; }
+        public List<Employee> employeesList = new List<Employee>();
+        public string m_FirstName { get; set; }
+        public string m_LastName { get; set; }
         private DateTime m_Date { get; set; }
         private char m_Union { get; set; }
         private int m_HrlyShift { get; set; }

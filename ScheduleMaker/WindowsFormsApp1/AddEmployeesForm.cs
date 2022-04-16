@@ -12,6 +12,7 @@ namespace ScheduleMaker
 {
     public partial class AddEmployeesForm : Form
     {
+        SchedulerForm main = new SchedulerForm();
         public AddEmployeesForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace ScheduleMaker
         {
             Employee newEmployee = new Employee(m_txtFirstName.Text, m_txtLastName.Text, GetDate(), UnionCheck(), ShiftCheck(), TeamCheck());
             newEmployee.AddEmployee(newEmployee);
+            main.UpdateEmployeesToListBox(newEmployee.EmployeesList);
             this.Close();
         }
 

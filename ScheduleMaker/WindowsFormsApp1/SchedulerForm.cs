@@ -12,7 +12,9 @@ namespace ScheduleMaker
 {
     public partial class SchedulerForm : Form
     {
+
         private AddEmployeesForm addEmployeesForm;
+        private List<Employee> employees { get; }
 
         public SchedulerForm()
         {
@@ -23,6 +25,14 @@ namespace ScheduleMaker
         {
             addEmployeesForm = new AddEmployeesForm();
             addEmployeesForm.ShowDialog();
+        }
+
+        public void UpdateEmployeesToListBox(List<Employee> list)
+        {
+            foreach(Employee emp in list)
+            {
+                m_lbEmployees.Items.Add(emp.m_FirstName);
+            }
         }
     }
 }

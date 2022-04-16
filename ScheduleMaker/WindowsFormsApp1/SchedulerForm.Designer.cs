@@ -88,7 +88,7 @@
             this.m_DeleteEmployee.Text = "Delete Employee";
             this.m_DeleteEmployee.UseVisualStyleBackColor = true;
             // 
-            // Scheduler
+            // SchedulerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +99,7 @@
             this.Controls.Add(this.m_btnClear);
             this.Controls.Add(this.m_txtNameSearch);
             this.Controls.Add(this.m_lbEmployees);
-            this.Name = "Scheduler";
+            this.Name = "SchedulerForm";
             this.Text = "Scheduler";
             this.ResumeLayout(false);
             this.PerformLayout();
