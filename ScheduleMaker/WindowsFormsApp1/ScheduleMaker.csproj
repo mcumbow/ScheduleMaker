@@ -46,25 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddEmployees.cs">
+    <Compile Include="AddEmployeesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEmployees.Designer.cs">
-      <DependentUpon>AddEmployees.cs</DependentUpon>
+    <Compile Include="AddEmployeesForm.Designer.cs">
+      <DependentUpon>AddEmployeesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Employee.cs" />
+    <Compile Include="SchedulerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SchedulerForm.Designer.cs">
+      <DependentUpon>SchedulerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddEmployees.resx">
-      <DependentUpon>AddEmployees.cs</DependentUpon>
+    <EmbeddedResource Include="AddEmployeesForm.resx">
+      <DependentUpon>AddEmployeesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="SchedulerForm.resx">
+      <DependentUpon>SchedulerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

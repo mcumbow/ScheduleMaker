@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace ScheduleMaker
 {
-    public partial class Scheduler : Form
+    public partial class SchedulerForm : Form
     {
-        private AddEmployees addEmployeesForm;
+        private AddEmployeesForm addEmployeesForm;
 
-        public Scheduler()
+        public SchedulerForm()
         {
             InitializeComponent();
         }
 
         private void m_btnAddEmployee_Click(object sender, EventArgs e)
         {
-            AddEmployees addEmployeeForm = new AddEmployees();
-            addEmployeeForm.ShowDialog();
+            addEmployeesForm = new AddEmployeesForm();
+            addEmployeesForm.ShowDialog();
         }
     }
 }

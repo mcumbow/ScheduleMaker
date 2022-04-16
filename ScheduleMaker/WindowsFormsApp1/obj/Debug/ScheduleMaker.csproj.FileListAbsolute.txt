@@ -1,0 +1,12 @@
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.AssemblyReference.cache
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.SuggestedBindingRedirects.cache
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.AddEmployeesForm.resources
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.SchedulerForm.resources
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.GenerateResource.cache
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.CoreCompileInputs.cache
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

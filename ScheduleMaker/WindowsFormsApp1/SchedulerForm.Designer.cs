@@ -1,6 +1,6 @@
 ﻿namespace ScheduleMaker
 {
-    partial class Scheduler
+    partial class SchedulerForm
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace ScheduleMaker
 {
-    partial class AddEmployees
+    partial class AddEmployeesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,15 +36,17 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.m_lblUnion = new System.Windows.Forms.Label();
             this.m_ckUnion = new System.Windows.Forms.CheckBox();
-            this.m_lblShift = new System.Windows.Forms.Label();
-            this.m_rb8HrShift = new System.Windows.Forms.RadioButton();
-            this.m_rb12HrShift = new System.Windows.Forms.RadioButton();
-            this.m_rbSalary = new System.Windows.Forms.RadioButton();
-            this.m_lblTeam = new System.Windows.Forms.Label();
-            this.m_rbTeam1 = new System.Windows.Forms.RadioButton();
-            this.m_rbTeam2 = new System.Windows.Forms.RadioButton();
-            this.m_rbTeam3 = new System.Windows.Forms.RadioButton();
             this.m_btnSaveEmployee = new System.Windows.Forms.Button();
+            this.m_gbShift = new System.Windows.Forms.GroupBox();
+            this.m_rbSalary = new System.Windows.Forms.RadioButton();
+            this.m_rb12HrShift = new System.Windows.Forms.RadioButton();
+            this.m_rb8HrShift = new System.Windows.Forms.RadioButton();
+            this.m_gbTeam = new System.Windows.Forms.GroupBox();
+            this.m_rbTeam3 = new System.Windows.Forms.RadioButton();
+            this.m_rbTeam2 = new System.Windows.Forms.RadioButton();
+            this.m_rbTeam1 = new System.Windows.Forms.RadioButton();
+            this.m_gbShift.SuspendLayout();
+            this.m_gbTeam.SuspendLayout();
             this.SuspendLayout();
             // 
             // m_txtFirstName
@@ -115,90 +117,6 @@
             this.m_ckUnion.Text = "Is employee union?";
             this.m_ckUnion.UseVisualStyleBackColor = true;
             // 
-            // m_lblShift
-            // 
-            this.m_lblShift.AutoSize = true;
-            this.m_lblShift.Location = new System.Drawing.Point(41, 142);
-            this.m_lblShift.Name = "m_lblShift";
-            this.m_lblShift.Size = new System.Drawing.Size(31, 13);
-            this.m_lblShift.TabIndex = 9;
-            this.m_lblShift.Text = "Shift:";
-            // 
-            // m_rb8HrShift
-            // 
-            this.m_rb8HrShift.AutoSize = true;
-            this.m_rb8HrShift.Location = new System.Drawing.Point(86, 142);
-            this.m_rb8HrShift.Name = "m_rb8HrShift";
-            this.m_rb8HrShift.Size = new System.Drawing.Size(69, 17);
-            this.m_rb8HrShift.TabIndex = 10;
-            this.m_rb8HrShift.TabStop = true;
-            this.m_rb8HrShift.Text = "8 Hr Shift";
-            this.m_rb8HrShift.UseVisualStyleBackColor = true;
-            // 
-            // m_rb12HrShift
-            // 
-            this.m_rb12HrShift.AutoSize = true;
-            this.m_rb12HrShift.Location = new System.Drawing.Point(86, 165);
-            this.m_rb12HrShift.Name = "m_rb12HrShift";
-            this.m_rb12HrShift.Size = new System.Drawing.Size(75, 17);
-            this.m_rb12HrShift.TabIndex = 11;
-            this.m_rb12HrShift.TabStop = true;
-            this.m_rb12HrShift.Text = "12 Hr Shift";
-            this.m_rb12HrShift.UseVisualStyleBackColor = true;
-            // 
-            // m_rbSalary
-            // 
-            this.m_rbSalary.AutoSize = true;
-            this.m_rbSalary.Location = new System.Drawing.Point(86, 188);
-            this.m_rbSalary.Name = "m_rbSalary";
-            this.m_rbSalary.Size = new System.Drawing.Size(54, 17);
-            this.m_rbSalary.TabIndex = 12;
-            this.m_rbSalary.TabStop = true;
-            this.m_rbSalary.Text = "Salary";
-            this.m_rbSalary.UseVisualStyleBackColor = true;
-            // 
-            // m_lblTeam
-            // 
-            this.m_lblTeam.AutoSize = true;
-            this.m_lblTeam.Location = new System.Drawing.Point(42, 219);
-            this.m_lblTeam.Name = "m_lblTeam";
-            this.m_lblTeam.Size = new System.Drawing.Size(37, 13);
-            this.m_lblTeam.TabIndex = 13;
-            this.m_lblTeam.Text = "Team:";
-            // 
-            // m_rbTeam1
-            // 
-            this.m_rbTeam1.AutoSize = true;
-            this.m_rbTeam1.Location = new System.Drawing.Point(86, 217);
-            this.m_rbTeam1.Name = "m_rbTeam1";
-            this.m_rbTeam1.Size = new System.Drawing.Size(61, 17);
-            this.m_rbTeam1.TabIndex = 14;
-            this.m_rbTeam1.TabStop = true;
-            this.m_rbTeam1.Text = "Team 1";
-            this.m_rbTeam1.UseVisualStyleBackColor = true;
-            // 
-            // m_rbTeam2
-            // 
-            this.m_rbTeam2.AutoSize = true;
-            this.m_rbTeam2.Location = new System.Drawing.Point(86, 240);
-            this.m_rbTeam2.Name = "m_rbTeam2";
-            this.m_rbTeam2.Size = new System.Drawing.Size(61, 17);
-            this.m_rbTeam2.TabIndex = 15;
-            this.m_rbTeam2.TabStop = true;
-            this.m_rbTeam2.Text = "Team 2";
-            this.m_rbTeam2.UseVisualStyleBackColor = true;
-            // 
-            // m_rbTeam3
-            // 
-            this.m_rbTeam3.AutoSize = true;
-            this.m_rbTeam3.Location = new System.Drawing.Point(86, 263);
-            this.m_rbTeam3.Name = "m_rbTeam3";
-            this.m_rbTeam3.Size = new System.Drawing.Size(61, 17);
-            this.m_rbTeam3.TabIndex = 16;
-            this.m_rbTeam3.TabStop = true;
-            this.m_rbTeam3.Text = "Team 3";
-            this.m_rbTeam3.UseVisualStyleBackColor = true;
-            // 
             // m_btnSaveEmployee
             // 
             this.m_btnSaveEmployee.Location = new System.Drawing.Point(207, 299);
@@ -209,20 +127,104 @@
             this.m_btnSaveEmployee.UseVisualStyleBackColor = true;
             this.m_btnSaveEmployee.Click += new System.EventHandler(this.m_btnSaveEmployee_Click);
             // 
+            // m_gbShift
+            // 
+            this.m_gbShift.Controls.Add(this.m_rbSalary);
+            this.m_gbShift.Controls.Add(this.m_rb12HrShift);
+            this.m_gbShift.Controls.Add(this.m_rb8HrShift);
+            this.m_gbShift.Location = new System.Drawing.Point(37, 139);
+            this.m_gbShift.Name = "m_gbShift";
+            this.m_gbShift.Size = new System.Drawing.Size(138, 91);
+            this.m_gbShift.TabIndex = 18;
+            this.m_gbShift.TabStop = false;
+            this.m_gbShift.Text = "Shift:";
+            // 
+            // m_rbSalary
+            // 
+            this.m_rbSalary.AutoSize = true;
+            this.m_rbSalary.Location = new System.Drawing.Point(39, 65);
+            this.m_rbSalary.Name = "m_rbSalary";
+            this.m_rbSalary.Size = new System.Drawing.Size(54, 17);
+            this.m_rbSalary.TabIndex = 16;
+            this.m_rbSalary.TabStop = true;
+            this.m_rbSalary.Text = "Salary";
+            this.m_rbSalary.UseVisualStyleBackColor = true;
+            // 
+            // m_rb12HrShift
+            // 
+            this.m_rb12HrShift.AutoSize = true;
+            this.m_rb12HrShift.Location = new System.Drawing.Point(39, 42);
+            this.m_rb12HrShift.Name = "m_rb12HrShift";
+            this.m_rb12HrShift.Size = new System.Drawing.Size(75, 17);
+            this.m_rb12HrShift.TabIndex = 15;
+            this.m_rb12HrShift.TabStop = true;
+            this.m_rb12HrShift.Text = "12 Hr Shift";
+            this.m_rb12HrShift.UseVisualStyleBackColor = true;
+            // 
+            // m_rb8HrShift
+            // 
+            this.m_rb8HrShift.AutoSize = true;
+            this.m_rb8HrShift.Location = new System.Drawing.Point(39, 19);
+            this.m_rb8HrShift.Name = "m_rb8HrShift";
+            this.m_rb8HrShift.Size = new System.Drawing.Size(69, 17);
+            this.m_rb8HrShift.TabIndex = 14;
+            this.m_rb8HrShift.TabStop = true;
+            this.m_rb8HrShift.Text = "8 Hr Shift";
+            this.m_rb8HrShift.UseVisualStyleBackColor = true;
+            // 
+            // m_gbTeam
+            // 
+            this.m_gbTeam.Controls.Add(this.m_rbTeam3);
+            this.m_gbTeam.Controls.Add(this.m_rbTeam2);
+            this.m_gbTeam.Controls.Add(this.m_rbTeam1);
+            this.m_gbTeam.Location = new System.Drawing.Point(37, 236);
+            this.m_gbTeam.Name = "m_gbTeam";
+            this.m_gbTeam.Size = new System.Drawing.Size(138, 86);
+            this.m_gbTeam.TabIndex = 19;
+            this.m_gbTeam.TabStop = false;
+            this.m_gbTeam.Text = "Team:";
+            // 
+            // m_rbTeam3
+            // 
+            this.m_rbTeam3.AutoSize = true;
+            this.m_rbTeam3.Location = new System.Drawing.Point(39, 63);
+            this.m_rbTeam3.Name = "m_rbTeam3";
+            this.m_rbTeam3.Size = new System.Drawing.Size(61, 17);
+            this.m_rbTeam3.TabIndex = 19;
+            this.m_rbTeam3.TabStop = true;
+            this.m_rbTeam3.Text = "Team 3";
+            this.m_rbTeam3.UseVisualStyleBackColor = true;
+            // 
+            // m_rbTeam2
+            // 
+            this.m_rbTeam2.AutoSize = true;
+            this.m_rbTeam2.Location = new System.Drawing.Point(39, 40);
+            this.m_rbTeam2.Name = "m_rbTeam2";
+            this.m_rbTeam2.Size = new System.Drawing.Size(61, 17);
+            this.m_rbTeam2.TabIndex = 18;
+            this.m_rbTeam2.TabStop = true;
+            this.m_rbTeam2.Text = "Team 2";
+            this.m_rbTeam2.UseVisualStyleBackColor = true;
+            // 
+            // m_rbTeam1
+            // 
+            this.m_rbTeam1.AutoSize = true;
+            this.m_rbTeam1.Location = new System.Drawing.Point(39, 17);
+            this.m_rbTeam1.Name = "m_rbTeam1";
+            this.m_rbTeam1.Size = new System.Drawing.Size(61, 17);
+            this.m_rbTeam1.TabIndex = 17;
+            this.m_rbTeam1.TabStop = true;
+            this.m_rbTeam1.Text = "Team 1";
+            this.m_rbTeam1.UseVisualStyleBackColor = true;
+            // 
             // AddEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 334);
+            this.Controls.Add(this.m_gbTeam);
+            this.Controls.Add(this.m_gbShift);
             this.Controls.Add(this.m_btnSaveEmployee);
-            this.Controls.Add(this.m_rbTeam3);
-            this.Controls.Add(this.m_rbTeam2);
-            this.Controls.Add(this.m_rbTeam1);
-            this.Controls.Add(this.m_lblTeam);
-            this.Controls.Add(this.m_rbSalary);
-            this.Controls.Add(this.m_rb12HrShift);
-            this.Controls.Add(this.m_rb8HrShift);
-            this.Controls.Add(this.m_lblShift);
             this.Controls.Add(this.m_ckUnion);
             this.Controls.Add(this.m_lblUnion);
             this.Controls.Add(this.dateTimePicker);
@@ -233,6 +235,10 @@
             this.Controls.Add(this.m_txtFirstName);
             this.Name = "AddEmployees";
             this.Text = "AddEmployees";
+            this.m_gbShift.ResumeLayout(false);
+            this.m_gbShift.PerformLayout();
+            this.m_gbTeam.ResumeLayout(false);
+            this.m_gbTeam.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,14 +254,14 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label m_lblUnion;
         private System.Windows.Forms.CheckBox m_ckUnion;
-        private System.Windows.Forms.Label m_lblShift;
-        private System.Windows.Forms.RadioButton m_rb8HrShift;
-        private System.Windows.Forms.RadioButton m_rb12HrShift;
-        private System.Windows.Forms.RadioButton m_rbSalary;
-        private System.Windows.Forms.Label m_lblTeam;
-        private System.Windows.Forms.RadioButton m_rbTeam1;
-        private System.Windows.Forms.RadioButton m_rbTeam2;
-        private System.Windows.Forms.RadioButton m_rbTeam3;
         private System.Windows.Forms.Button m_btnSaveEmployee;
+        private System.Windows.Forms.GroupBox m_gbShift;
+        private System.Windows.Forms.RadioButton m_rbSalary;
+        private System.Windows.Forms.RadioButton m_rb12HrShift;
+        private System.Windows.Forms.RadioButton m_rb8HrShift;
+        private System.Windows.Forms.GroupBox m_gbTeam;
+        private System.Windows.Forms.RadioButton m_rbTeam3;
+        private System.Windows.Forms.RadioButton m_rbTeam2;
+        private System.Windows.Forms.RadioButton m_rbTeam1;
     }
 }
