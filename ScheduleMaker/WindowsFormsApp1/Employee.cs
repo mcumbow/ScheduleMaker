@@ -8,7 +8,6 @@ namespace ScheduleMaker
 {
     public class Employee
     {
-        public List<Employee> employeesList = new List<Employee>();
         public string m_FirstName { get; set; }
         public string m_LastName { get; set; }
         private DateTime m_Date { get; set; }
@@ -29,16 +28,6 @@ namespace ScheduleMaker
             m_Union = union;
             m_HrlyShift = HrlyShift;
             m_Team = team;
-        }
-
-        public void AddEmployee(Employee employee)
-        {
-            employeesList.Add(employee);
-        }
-
-        public List<Employee> EmployeesList
-        {
-            get { return employeesList; }
         }
     }
 }

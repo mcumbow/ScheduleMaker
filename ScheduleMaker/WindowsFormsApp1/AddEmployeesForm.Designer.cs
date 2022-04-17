@@ -45,6 +45,7 @@
             this.m_rbTeam3 = new System.Windows.Forms.RadioButton();
             this.m_rbTeam2 = new System.Windows.Forms.RadioButton();
             this.m_rbTeam1 = new System.Windows.Forms.RadioButton();
+            this.m_btnClose = new System.Windows.Forms.Button();
             this.m_gbShift.SuspendLayout();
             this.m_gbTeam.SuspendLayout();
             this.SuspendLayout();
@@ -119,7 +120,7 @@
             // 
             // m_btnSaveEmployee
             // 
-            this.m_btnSaveEmployee.Location = new System.Drawing.Point(207, 299);
+            this.m_btnSaveEmployee.Location = new System.Drawing.Point(207, 276);
             this.m_btnSaveEmployee.Name = "m_btnSaveEmployee";
             this.m_btnSaveEmployee.Size = new System.Drawing.Size(75, 23);
             this.m_btnSaveEmployee.TabIndex = 17;
@@ -217,11 +218,22 @@
             this.m_rbTeam1.Text = "Team 1";
             this.m_rbTeam1.UseVisualStyleBackColor = true;
             // 
-            // AddEmployees
+            // m_btnClose
+            // 
+            this.m_btnClose.Location = new System.Drawing.Point(207, 305);
+            this.m_btnClose.Name = "m_btnClose";
+            this.m_btnClose.Size = new System.Drawing.Size(75, 23);
+            this.m_btnClose.TabIndex = 20;
+            this.m_btnClose.Text = "Close";
+            this.m_btnClose.UseVisualStyleBackColor = true;
+            this.m_btnClose.Click += new System.EventHandler(this.m_btnClose_Click);
+            // 
+            // AddEmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(294, 334);
+            this.Controls.Add(this.m_btnClose);
             this.Controls.Add(this.m_gbTeam);
             this.Controls.Add(this.m_gbShift);
             this.Controls.Add(this.m_btnSaveEmployee);
@@ -233,7 +245,7 @@
             this.Controls.Add(this.m_lblFirstName);
             this.Controls.Add(this.m_txtLastName);
             this.Controls.Add(this.m_txtFirstName);
-            this.Name = "AddEmployees";
+            this.Name = "AddEmployeesForm";
             this.Text = "AddEmployees";
             this.m_gbShift.ResumeLayout(false);
             this.m_gbShift.PerformLayout();
@@ -263,5 +275,6 @@
         private System.Windows.Forms.RadioButton m_rbTeam3;
         private System.Windows.Forms.RadioButton m_rbTeam2;
         private System.Windows.Forms.RadioButton m_rbTeam1;
+        private System.Windows.Forms.Button m_btnClose;
     }
 }

@@ -12,27 +12,36 @@ namespace ScheduleMaker
 {
     public partial class AddEmployeesForm : Form
     {
-        SchedulerForm main = new SchedulerForm();
+        public List<Employee> employeesList = new List<Employee>();
         public AddEmployeesForm()
         {
-            InitializeComponent();
+            InitializeComponent();  
         }
 
         private void m_btnSaveEmployee_Click(object sender, EventArgs e)
         {
             Employee newEmployee = new Employee(m_txtFirstName.Text, m_txtLastName.Text, GetDate(), UnionCheck(), ShiftCheck(), TeamCheck());
-            newEmployee.AddEmployee(newEmployee);
-            main.UpdateEmployeesToListBox(newEmployee.EmployeesList);
-            this.Close();
+            employeesList.Add(newEmployee);
+            ClearAll();
         }
 
+        public void ClearAll()
+        {
+            m_ckUnion.Checked = false;
+            m_rb12HrShift.Checked = false;
+            m_rb8HrShift.Checked = false;
+            m_rbSalary.Checked = false;
+            m_rbTeam1.Checked = false;
+            m_rbTeam2.Checked = false;
+            m_rbTeam3.Checked = false;
+            m_txtFirstName.Text = string.Empty;
+            m_txtLastName.Text = string.Empty;
+        }
         public int ShiftCheck()
         {
             int shift = 0;
 
             if (m_rb8HrShift.Checked)
-                shift = 8;
-            if (m_rb12HrShift.Checked)
                 shift = 8;
             if (m_rb12HrShift.Checked)
                 shift = 12;
@@ -64,6 +73,11 @@ namespace ScheduleMaker
         public DateTime GetDate()
         {
             return dateTimePicker.Value.Date;       
+        }
+
+        private void m_btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
