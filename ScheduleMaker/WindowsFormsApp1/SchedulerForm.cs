@@ -29,7 +29,7 @@ namespace ScheduleMaker
             if (addEmployeesForm != null)
             {
                 m_lbEmployees.Items.Clear();
-               foreach(Employee emp in addEmployeesForm.employeesList)
+               foreach(EmployeeData emp in addEmployeesForm.employeesList)
                 {
                     m_lbEmployees.Items.Add(emp.m_LastName + "," + emp.m_FirstName + " Hired " + emp.m_Date);
                 }

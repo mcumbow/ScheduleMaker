@@ -12,7 +12,7 @@ namespace ScheduleMaker
 {
     public partial class AddEmployeesForm : Form
     {
-        public List<Employee> employeesList = new List<Employee>();
+        public List<EmployeeData> employeesList = new List<EmployeeData>();
         public AddEmployeesForm()
         {
             InitializeComponent();  
@@ -20,7 +20,7 @@ namespace ScheduleMaker
 
         private void m_btnSaveEmployee_Click(object sender, EventArgs e)
         {
-            Employee newEmployee = new Employee(m_txtFirstName.Text, m_txtLastName.Text, GetDate(), UnionCheck(), ShiftCheck(), TeamCheck());
+            EmployeeData newEmployee = new EmployeeData(m_txtFirstName.Text, m_txtLastName.Text, GetDate(), UnionCheck(), ShiftCheck(), TeamCheck());
             employeesList.Add(newEmployee);
             ClearAll();
         }

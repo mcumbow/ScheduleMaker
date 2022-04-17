@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleMaker
 {
-    public class Employee
+    public class EmployeeData
     {
         public string m_FirstName { get; set; }
         public string m_LastName { get; set; }
@@ -15,12 +15,12 @@ namespace ScheduleMaker
         private int m_HrlyShift { get; set; }
         public int m_Team { get; set; }
 
-        public Employee()
+        public EmployeeData()
         {
             //default constructor
         }
 
-        public Employee(String FirstName, String LastName, DateTime date, char union, int HrlyShift, int team)
+        public EmployeeData(String FirstName, String LastName, DateTime date, char union, int HrlyShift, int team)
         {
             m_FirstName = FirstName;
             m_LastName = LastName;
