@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblInfo = new System.Windows.Forms.Label();
             this.m_lbEmployees = new System.Windows.Forms.ListBox();
             this.m_txtNameSearch = new System.Windows.Forms.TextBox();
             this.m_btnClear = new System.Windows.Forms.Button();
@@ -36,15 +35,6 @@
             this.m_btnEditEmployee = new System.Windows.Forms.Button();
             this.m_DeleteEmployee = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblInfo
-            // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(66, 440);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(35, 13);
-            this.lblInfo.TabIndex = 6;
-            this.lblInfo.Text = "label1";
             // 
             // m_lbEmployees
             // 
@@ -103,7 +93,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 719);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.m_DeleteEmployee);
             this.Controls.Add(this.m_btnEditEmployee);
             this.Controls.Add(this.m_btnAddEmployee);
@@ -119,7 +108,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.ListBox m_lbEmployees;
         private System.Windows.Forms.TextBox m_txtNameSearch;
         private System.Windows.Forms.Button m_btnClear;

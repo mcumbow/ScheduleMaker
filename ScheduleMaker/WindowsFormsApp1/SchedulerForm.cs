@@ -33,8 +33,6 @@ namespace ScheduleMaker
                 {
                     m_lbEmployees.Items.Add(emp.m_FirstName);
                 }
-
-                lblInfo.Text = addEmployeesForm.employeesList.Count.ToString();
             }
                     
         }
