@@ -10,10 +10,10 @@ namespace ScheduleMaker
     {
         public string m_FirstName { get; set; }
         public string m_LastName { get; set; }
-        private DateTime m_Date { get; set; }
+        public DateTime m_Date { get; set; }
         private char m_Union { get; set; }
         private int m_HrlyShift { get; set; }
-        private int m_Team { get; set; }
+        public int m_Team { get; set; }
 
         public Employee()
         {

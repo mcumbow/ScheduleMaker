@@ -120,7 +120,8 @@
             // 
             // m_btnSaveEmployee
             // 
-            this.m_btnSaveEmployee.Location = new System.Drawing.Point(207, 276);
+            this.m_btnSaveEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnSaveEmployee.Location = new System.Drawing.Point(126, 241);
             this.m_btnSaveEmployee.Name = "m_btnSaveEmployee";
             this.m_btnSaveEmployee.Size = new System.Drawing.Size(75, 23);
             this.m_btnSaveEmployee.TabIndex = 17;
@@ -133,7 +134,7 @@
             this.m_gbShift.Controls.Add(this.m_rbSalary);
             this.m_gbShift.Controls.Add(this.m_rb12HrShift);
             this.m_gbShift.Controls.Add(this.m_rb8HrShift);
-            this.m_gbShift.Location = new System.Drawing.Point(37, 139);
+            this.m_gbShift.Location = new System.Drawing.Point(12, 144);
             this.m_gbShift.Name = "m_gbShift";
             this.m_gbShift.Size = new System.Drawing.Size(138, 91);
             this.m_gbShift.TabIndex = 18;
@@ -178,9 +179,9 @@
             this.m_gbTeam.Controls.Add(this.m_rbTeam3);
             this.m_gbTeam.Controls.Add(this.m_rbTeam2);
             this.m_gbTeam.Controls.Add(this.m_rbTeam1);
-            this.m_gbTeam.Location = new System.Drawing.Point(37, 236);
+            this.m_gbTeam.Location = new System.Drawing.Point(156, 149);
             this.m_gbTeam.Name = "m_gbTeam";
-            this.m_gbTeam.Size = new System.Drawing.Size(138, 86);
+            this.m_gbTeam.Size = new System.Drawing.Size(126, 86);
             this.m_gbTeam.TabIndex = 19;
             this.m_gbTeam.TabStop = false;
             this.m_gbTeam.Text = "Team:";
@@ -220,7 +221,8 @@
             // 
             // m_btnClose
             // 
-            this.m_btnClose.Location = new System.Drawing.Point(207, 305);
+            this.m_btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnClose.Location = new System.Drawing.Point(207, 241);
             this.m_btnClose.Name = "m_btnClose";
             this.m_btnClose.Size = new System.Drawing.Size(75, 23);
             this.m_btnClose.TabIndex = 20;
@@ -232,7 +234,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 334);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(294, 277);
             this.Controls.Add(this.m_btnClose);
             this.Controls.Add(this.m_gbTeam);
             this.Controls.Add(this.m_gbShift);
