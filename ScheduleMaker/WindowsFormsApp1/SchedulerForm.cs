@@ -13,6 +13,7 @@ namespace ScheduleMaker
     public partial class SchedulerForm : Form
     {
         AddEmployeesForm addEmployeesForm = new AddEmployeesForm();
+        EmployeeData emp;
 
         public SchedulerForm()
         {
@@ -35,6 +36,16 @@ namespace ScheduleMaker
                 }
             }
                     
+        }
+
+        private void SchedulerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            emp = new EmployeeData();
+            //foreach(EmployeeData employee in addEmployeesForm.employeesList)
+            //{
+                
+            //}
+            emp.SaveToStream(addEmployeesForm.employeesList);
         }
     }
 }

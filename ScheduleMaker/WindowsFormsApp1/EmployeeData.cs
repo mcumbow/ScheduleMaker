@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
+using System.Xml.Serialization;
 
 namespace ScheduleMaker
 {
@@ -11,8 +16,8 @@ namespace ScheduleMaker
         public string m_FirstName { get; set; }
         public string m_LastName { get; set; }
         public DateTime m_Date { get; set; }
-        private char m_Union { get; set; }
-        private int m_HrlyShift { get; set; }
+        public char m_Union { get; set; }
+        public int m_HrlyShift { get; set; }
         public int m_Team { get; set; }
 
         public EmployeeData()
@@ -28,6 +33,59 @@ namespace ScheduleMaker
             m_Union = union;
             m_HrlyShift = HrlyShift;
             m_Team = team;
+        }
+
+        public void SaveToStream(List<EmployeeData> list)
+        {
+            try
+            {
+                XmlDocument doc = new XmlDocument();
+                XmlNode rootNode = doc.CreateElement("Employees");
+                doc.AppendChild(rootNode);
+                foreach (EmployeeData emp in list)
+                {
+                    XmlNode userNode = doc.CreateElement("Employees");
+                    XmlAttribute fname = doc.CreateAttribute("FirstName");
+                    fname.Value = emp.m_FirstName;
+                    userNode.Attributes.Append(fname);
+                    XmlAttribute lname = doc.CreateAttribute("LastName");
+                    lname.Value = emp.m_LastName;
+                    userNode.Attributes.Append(lname);
+                    XmlAttribute date = doc.CreateAttribute("HireDate");
+                    date.Value = emp.m_Date.ToString();
+                    userNode.Attributes.Append(date);
+                    XmlAttribute union = doc.CreateAttribute("Union");
+                    union.Value = emp.m_Union.ToString();
+                    userNode.Attributes.Append(union);
+                    XmlAttribute HrlyShift = doc.CreateAttribute("HrlyShift");
+                    HrlyShift.Value = emp.m_HrlyShift.ToString();
+                    userNode.Attributes.Append(HrlyShift);
+                    XmlAttribute team = doc.CreateAttribute("Team");
+                    team.Value = emp.m_Team.ToString();
+                    userNode.Attributes.Append(team);
+                    rootNode.AppendChild(userNode);     
+                }
+                doc.Save("EmployeeList.xml");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void ReadFromStream(List<EmployeeData> list)
+        {
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("EmployeeList.xml");
+            XmlNodeList userNode = doc.SelectNodes("//Employees/Employees");
+            foreach(XmlNode employee in userNode)
+            {
+                EmployeeData emp = new EmployeeData(employee.Attributes["FirstName"].Value, employee.Attributes["LastName"].Value, Convert.ToDateTime(employee.Attributes["HireDate"].Value), Convert.ToChar(employee.Attributes["Union"].Value), Convert.ToInt32(employee.Attributes["HrlyShift"].Value), Convert.ToInt32(employee.Attributes["Team"].Value));
+                list.Add(emp);
+            }
+
+            doc.Save("EmployeeList.xml");
         }
     }
 }

@@ -102,6 +102,7 @@
             this.Name = "SchedulerForm";
             this.Text = "Scheduler";
             this.Activated += new System.EventHandler(this.SchedulerForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SchedulerForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

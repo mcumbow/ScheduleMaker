@@ -12,10 +12,13 @@ namespace ScheduleMaker
 {
     public partial class AddEmployeesForm : Form
     {
+        EmployeeData m_Employee;
         public List<EmployeeData> employeesList = new List<EmployeeData>();
         public AddEmployeesForm()
         {
-            InitializeComponent();  
+            m_Employee = new EmployeeData();
+            InitializeComponent();
+            m_Employee.ReadFromStream(employeesList);
         }
 
         private void m_btnSaveEmployee_Click(object sender, EventArgs e)
@@ -40,7 +43,6 @@ namespace ScheduleMaker
         public int ShiftCheck()
         {
             int shift = 0;
-
             if (m_rb8HrShift.Checked)
                 shift = 8;
             if (m_rb12HrShift.Checked)
