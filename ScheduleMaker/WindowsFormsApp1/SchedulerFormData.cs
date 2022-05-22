@@ -8,9 +8,9 @@ namespace ScheduleMaker
 {
     internal class SchedulerFormData
     {
-        public void populateEmployees(EmployeeData list)
-        {
+       // public String populateListBox(List<EmployeeData> list)
+        //{
 
-        }
+       // }
     }
 }

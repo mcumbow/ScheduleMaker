@@ -10,3 +10,7 @@ D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\Schedu
 D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.CoreCompileInputs.cache
 D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\Json.Net.dll
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+D:\My Repositories\ScheduleMaker\ScheduleMaker\WindowsFormsApp1\obj\Debug\ScheduleMaker.csproj.CopyComplete

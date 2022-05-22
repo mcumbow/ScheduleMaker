@@ -13,9 +13,10 @@ namespace ScheduleMaker
 {
     public class EmployeeData
     {
+        public int m_Id { get; set; }
         public string m_FirstName { get; set; }
         public string m_LastName { get; set; }
-        public DateTime m_Date { get; set; }
+        public string m_Date { get; set; }
         public char m_Union { get; set; }
         public int m_HrlyShift { get; set; }
         public int m_Team { get; set; }
@@ -25,14 +26,25 @@ namespace ScheduleMaker
             //default constructor
         }
 
-        public EmployeeData(String FirstName, String LastName, DateTime date, char union, int HrlyShift, int team)
+        public EmployeeData(int ID, String FirstName, String LastName, String date, char union, int HrlyShift, int team)
         {
+            m_Id = ID;
             m_FirstName = FirstName;
             m_LastName = LastName;
             m_Date = date;
             m_Union = union;
             m_HrlyShift = HrlyShift;
             m_Team = team;
+        }
+
+        public String AddEmployeeFormNullCheck()
+        {
+            if (m_Id < 0)
+            {
+                return "m_id";
+            }
+
+            return "true";
         }
 
         public void SaveToStream(List<EmployeeData> list)
@@ -45,6 +57,9 @@ namespace ScheduleMaker
                 foreach (EmployeeData emp in list)
                 {
                     XmlNode userNode = doc.CreateElement("Employees");
+                    XmlAttribute ID = doc.CreateAttribute("ID");
+                    ID.Value = emp.m_Id.ToString();
+                    userNode.Attributes.Append(ID);
                     XmlAttribute fname = doc.CreateAttribute("FirstName");
                     fname.Value = emp.m_FirstName;
                     userNode.Attributes.Append(fname);
@@ -81,7 +96,7 @@ namespace ScheduleMaker
             XmlNodeList userNode = doc.SelectNodes("//Employees/Employees");
             foreach(XmlNode employee in userNode)
             {
-                EmployeeData emp = new EmployeeData(employee.Attributes["FirstName"].Value, employee.Attributes["LastName"].Value, Convert.ToDateTime(employee.Attributes["HireDate"].Value), Convert.ToChar(employee.Attributes["Union"].Value), Convert.ToInt32(employee.Attributes["HrlyShift"].Value), Convert.ToInt32(employee.Attributes["Team"].Value));
+                EmployeeData emp = new EmployeeData(Convert.ToInt32(employee.Attributes["ID"].Value), employee.Attributes["FirstName"].Value, employee.Attributes["LastName"].Value, employee.Attributes["HireDate"].Value, Convert.ToChar(employee.Attributes["Union"].Value), Convert.ToInt32(employee.Attributes["HrlyShift"].Value), Convert.ToInt32(employee.Attributes["Team"].Value));
                 list.Add(emp);
             }
 

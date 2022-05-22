@@ -33,7 +33,7 @@
             this.m_lblFirstName = new System.Windows.Forms.Label();
             this.m_lblLastName = new System.Windows.Forms.Label();
             this.m_lblHireDate = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.m_dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.m_lblUnion = new System.Windows.Forms.Label();
             this.m_ckUnion = new System.Windows.Forms.CheckBox();
             this.m_btnSaveEmployee = new System.Windows.Forms.Button();
@@ -46,6 +46,8 @@
             this.m_rbTeam2 = new System.Windows.Forms.RadioButton();
             this.m_rbTeam1 = new System.Windows.Forms.RadioButton();
             this.m_btnClose = new System.Windows.Forms.Button();
+            this.lblID = new System.Windows.Forms.Label();
+            this.m_txtID = new System.Windows.Forms.TextBox();
             this.m_gbShift.SuspendLayout();
             this.m_gbTeam.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,7 @@
             this.m_txtFirstName.Name = "m_txtFirstName";
             this.m_txtFirstName.Size = new System.Drawing.Size(100, 20);
             this.m_txtFirstName.TabIndex = 0;
+            this.m_txtFirstName.TextChanged += new System.EventHandler(this.m_txtFirstName_TextChanged);
             // 
             // m_txtLastName
             // 
@@ -63,6 +66,7 @@
             this.m_txtLastName.Name = "m_txtLastName";
             this.m_txtLastName.Size = new System.Drawing.Size(100, 20);
             this.m_txtLastName.TabIndex = 1;
+            this.m_txtLastName.TextChanged += new System.EventHandler(this.m_txtLastName_TextChanged);
             // 
             // m_lblFirstName
             // 
@@ -91,18 +95,18 @@
             this.m_lblHireDate.TabIndex = 5;
             this.m_lblHireDate.Text = "Hire Date:";
             // 
-            // dateTimePicker
+            // m_dateTimePicker
             // 
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker.Location = new System.Drawing.Point(75, 86);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker.TabIndex = 6;
+            this.m_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.m_dateTimePicker.Location = new System.Drawing.Point(75, 86);
+            this.m_dateTimePicker.Name = "m_dateTimePicker";
+            this.m_dateTimePicker.Size = new System.Drawing.Size(100, 20);
+            this.m_dateTimePicker.TabIndex = 6;
             // 
             // m_lblUnion
             // 
             this.m_lblUnion.AutoSize = true;
-            this.m_lblUnion.Location = new System.Drawing.Point(34, 116);
+            this.m_lblUnion.Location = new System.Drawing.Point(34, 9);
             this.m_lblUnion.Name = "m_lblUnion";
             this.m_lblUnion.Size = new System.Drawing.Size(38, 13);
             this.m_lblUnion.TabIndex = 7;
@@ -111,7 +115,7 @@
             // m_ckUnion
             // 
             this.m_ckUnion.AutoSize = true;
-            this.m_ckUnion.Location = new System.Drawing.Point(76, 116);
+            this.m_ckUnion.Location = new System.Drawing.Point(76, 9);
             this.m_ckUnion.Name = "m_ckUnion";
             this.m_ckUnion.Size = new System.Drawing.Size(117, 17);
             this.m_ckUnion.TabIndex = 8;
@@ -230,19 +234,38 @@
             this.m_btnClose.UseVisualStyleBackColor = true;
             this.m_btnClose.Click += new System.EventHandler(this.m_btnClose_Click);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(4, 115);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(68, 13);
+            this.lblID.TabIndex = 21;
+            this.lblID.Text = "Company ID:";
+            // 
+            // m_txtID
+            // 
+            this.m_txtID.Location = new System.Drawing.Point(76, 112);
+            this.m_txtID.Name = "m_txtID";
+            this.m_txtID.Size = new System.Drawing.Size(100, 20);
+            this.m_txtID.TabIndex = 22;
+            this.m_txtID.TextChanged += new System.EventHandler(this.m_txtID_TextChanged);
+            // 
             // AddEmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(294, 277);
+            this.Controls.Add(this.m_txtID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.m_btnClose);
             this.Controls.Add(this.m_gbTeam);
             this.Controls.Add(this.m_gbShift);
             this.Controls.Add(this.m_btnSaveEmployee);
             this.Controls.Add(this.m_ckUnion);
             this.Controls.Add(this.m_lblUnion);
-            this.Controls.Add(this.dateTimePicker);
+            this.Controls.Add(this.m_dateTimePicker);
             this.Controls.Add(this.m_lblHireDate);
             this.Controls.Add(this.m_lblLastName);
             this.Controls.Add(this.m_lblFirstName);
@@ -266,7 +289,7 @@
         private System.Windows.Forms.Label m_lblFirstName;
         private System.Windows.Forms.Label m_lblLastName;
         private System.Windows.Forms.Label m_lblHireDate;
-        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.DateTimePicker m_dateTimePicker;
         private System.Windows.Forms.Label m_lblUnion;
         private System.Windows.Forms.CheckBox m_ckUnion;
         private System.Windows.Forms.Button m_btnSaveEmployee;
@@ -279,5 +302,7 @@
         private System.Windows.Forms.RadioButton m_rbTeam2;
         private System.Windows.Forms.RadioButton m_rbTeam1;
         private System.Windows.Forms.Button m_btnClose;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox m_txtID;
     }
 }

@@ -78,6 +78,7 @@
             this.m_btnEditEmployee.TabIndex = 4;
             this.m_btnEditEmployee.Text = "Edit";
             this.m_btnEditEmployee.UseVisualStyleBackColor = true;
+            this.m_btnEditEmployee.Click += new System.EventHandler(this.m_btnEditEmployee_Click);
             // 
             // m_DeleteEmployee
             // 
@@ -87,12 +88,13 @@
             this.m_DeleteEmployee.TabIndex = 5;
             this.m_DeleteEmployee.Text = "Delete Employee";
             this.m_DeleteEmployee.UseVisualStyleBackColor = true;
+            this.m_DeleteEmployee.Click += new System.EventHandler(this.m_DeleteEmployee_Click);
             // 
             // SchedulerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 719);
+            this.ClientSize = new System.Drawing.Size(539, 488);
             this.Controls.Add(this.m_DeleteEmployee);
             this.Controls.Add(this.m_btnEditEmployee);
             this.Controls.Add(this.m_btnAddEmployee);
