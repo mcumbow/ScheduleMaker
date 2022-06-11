@@ -1,3 +1,4 @@
 <Employees>
-  <Employees ID="15646" FirstName="Michael" LastName="Cumbow" HireDate="4/26/2022" Union="n" HrlyShift="12" Team="1" />
+  <Employees ID="18696" FirstName="Michael" LastName="Cumbow" HireDate="6/11/2022" Union="n" HrlyShift="12" Team="2" />
+  <Employees ID="15464" FirstName="Katherine" LastName="Cumbow" HireDate="6/11/2022" Union="y" HrlyShift="24" Team="1" />
 </Employees>

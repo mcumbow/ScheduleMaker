@@ -14,12 +14,14 @@ namespace ScheduleMaker
     {
         bool boolEdit = false;
         EmployeeData m_Employee;
+        public Dictionary<String, int> EmployeeDataMap = new Dictionary<String, int>();
         public List<EmployeeData> employeesList = new List<EmployeeData>();
         public AddEmployeesForm()
         {
             m_Employee = new EmployeeData();
             InitializeComponent();
             m_Employee.ReadFromStream(employeesList);
+            mapEmployeeData();
             EmptyValueCheck("firstname");
             EmptyValueCheck("lastname");
             EmptyValueCheck("id");
@@ -34,24 +36,27 @@ namespace ScheduleMaker
                 {
                     foreach (EmployeeData employee in employeesList)
                     {
-                        if (employee.m_Id.ToString() == m_txtID.Text)
+                        if (EmployeeDataMap.ContainsKey(employee.m_Id.ToString()))
                         {
-                           int index = employeesList.FindIndex(emp => emp.m_Id == employee.m_Id);
-                            if (index != -1)
-                            {
-                                employeesList[index] = newEmployee;
-                                m_Employee.SaveToStream(employeesList);
-                                break;
-                            }
+                            int index = EmployeeDataMap[employee.m_Id.ToString()];
+                            employeesList[index] = newEmployee;
+                            m_Employee.SaveToStream(employeesList);
+                            break;
                         }
                     }
                     boolEdit = false;
                     Close();
                     MessageBox.Show(m_txtFirstName.Text + " " + m_txtLastName.Text + " " + m_txtID.Text + " Was Updated Successfully!");
                 }
+                else if (EmployeeDataMap.ContainsKey(GetID().ToString()))
+                {
+                    MessageBox.Show("Employee ID already Exist");
+                }
                 else
+                {
                     employeesList.Add(newEmployee);
-
+                    mapEmployeeData();
+                }
                 ClearAll();
             }
         }
@@ -218,6 +223,18 @@ namespace ScheduleMaker
         private void m_txtID_TextChanged(object sender, EventArgs e)
         {
             EmptyValueCheck("id");
+        }
+
+        //Map employees
+        public void mapEmployeeData()
+        {
+            EmployeeDataMap.Clear();
+            int index = 0;
+            foreach (EmployeeData employee in employeesList)
+            {
+                EmployeeDataMap.Add(employee.m_Id.ToString(), index);
+                index++;
+            }
         }
     }
 }

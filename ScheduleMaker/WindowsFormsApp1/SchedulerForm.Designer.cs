@@ -50,6 +50,7 @@
             this.m_txtNameSearch.Name = "m_txtNameSearch";
             this.m_txtNameSearch.Size = new System.Drawing.Size(168, 20);
             this.m_txtNameSearch.TabIndex = 1;
+            this.m_txtNameSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.m_txtNameSearch_KeyPress);
             // 
             // m_btnClear
             // 
@@ -59,6 +60,7 @@
             this.m_btnClear.TabIndex = 2;
             this.m_btnClear.Text = "Clear";
             this.m_btnClear.UseVisualStyleBackColor = true;
+            this.m_btnClear.Click += new System.EventHandler(this.m_btnClear_Click);
             // 
             // m_btnAddEmployee
             // 
