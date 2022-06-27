@@ -14,14 +14,15 @@ namespace ScheduleMaker
     {
         bool boolEdit = false;
         EmployeeData m_Employee;
-        public Dictionary<String, int> EmployeeDataMap = new Dictionary<String, int>();
-        public List<EmployeeData> employeesList = new List<EmployeeData>();
+        int CurrentID;
+
+        public Dictionary<int, EmployeeData> Employees = new Dictionary<int, EmployeeData>();
+
         public AddEmployeesForm()
         {
-            m_Employee = new EmployeeData();
             InitializeComponent();
-            m_Employee.ReadFromStream(employeesList);
-            mapEmployeeData();
+            m_Employee.ReadFromStream(Employees);
+            m_Employee = new EmployeeData();
             EmptyValueCheck("firstname");
             EmptyValueCheck("lastname");
             EmptyValueCheck("id");
@@ -34,31 +35,27 @@ namespace ScheduleMaker
                 EmployeeData newEmployee = new EmployeeData(GetID(), m_txtFirstName.Text, m_txtLastName.Text, GetDate(), UnionCheck(), ShiftCheck(), TeamCheck());
                 if (boolEdit)
                 {
-                    foreach (EmployeeData employee in employeesList)
+                    if (Employees.ContainsKey(CurrentID))
                     {
-                        if (EmployeeDataMap.ContainsKey(employee.m_Id.ToString()))
-                        {
-                            int index = EmployeeDataMap[employee.m_Id.ToString()];
-                            employeesList[index] = newEmployee;
-                            m_Employee.SaveToStream(employeesList);
-                            break;
-                        }
+                        Employees[CurrentID] = newEmployee;
+                        m_Employee.SaveToStream(Employees);
                     }
                     boolEdit = false;
                     Close();
                     MessageBox.Show(m_txtFirstName.Text + " " + m_txtLastName.Text + " " + m_txtID.Text + " Was Updated Successfully!");
                 }
-                else if (EmployeeDataMap.ContainsKey(GetID().ToString()))
+                else if (Employees.ContainsKey(GetID()))
                 {
                     MessageBox.Show("Employee ID already Exist");
                 }
                 else
                 {
-                    employeesList.Add(newEmployee);
-                    mapEmployeeData();
+                    Employees.Add(GetID(), newEmployee);
                 }
                 ClearAll();
             }
+            else
+                MessageBox.Show("You cannot leave anything blank");
         }
 
         public void ClearAll()
@@ -128,6 +125,8 @@ namespace ScheduleMaker
 
         public void PopulateEmployee(EmployeeData employee)
         {
+            CurrentID = employee.m_Id;
+
             if (employee.m_Union == 'y')
                 m_ckUnion.Checked = true;
             else
@@ -154,13 +153,6 @@ namespace ScheduleMaker
         public void IsEditMode()
         {
             boolEdit = true;
-        }
-
-
-
-        public void RemoveEmployee(EmployeeData employee)
-        {
-            employeesList.Remove(employee);
         }
 
         public bool EmptyValueCheck(String field)
@@ -223,18 +215,6 @@ namespace ScheduleMaker
         private void m_txtID_TextChanged(object sender, EventArgs e)
         {
             EmptyValueCheck("id");
-        }
-
-        //Map employees
-        public void mapEmployeeData()
-        {
-            EmployeeDataMap.Clear();
-            int index = 0;
-            foreach (EmployeeData employee in employeesList)
-            {
-                EmployeeDataMap.Add(employee.m_Id.ToString(), index);
-                index++;
-            }
         }
     }
 }

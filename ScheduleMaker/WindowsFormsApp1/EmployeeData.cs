@@ -43,40 +43,39 @@ namespace ScheduleMaker
             {
                 return "m_id";
             }
-
             return "true";
         }
 
-        public void SaveToStream(List<EmployeeData> list)
+        public void SaveToStream(Dictionary<int, EmployeeData> Employee)
         {
             try
             {
                 XmlDocument doc = new XmlDocument();
                 XmlNode rootNode = doc.CreateElement("Employees");
                 doc.AppendChild(rootNode);
-                foreach (EmployeeData emp in list)
+                foreach (KeyValuePair<int, EmployeeData> emp in Employee)
                 {
                     XmlNode userNode = doc.CreateElement("Employees");
                     XmlAttribute ID = doc.CreateAttribute("ID");
-                    ID.Value = emp.m_Id.ToString();
+                    ID.Value = emp.Value.m_Id.ToString();
                     userNode.Attributes.Append(ID);
                     XmlAttribute fname = doc.CreateAttribute("FirstName");
-                    fname.Value = emp.m_FirstName;
+                    fname.Value = emp.Value.m_FirstName;
                     userNode.Attributes.Append(fname);
                     XmlAttribute lname = doc.CreateAttribute("LastName");
-                    lname.Value = emp.m_LastName;
+                    lname.Value = emp.Value.m_LastName;
                     userNode.Attributes.Append(lname);
                     XmlAttribute date = doc.CreateAttribute("HireDate");
-                    date.Value = emp.m_Date.ToString();
+                    date.Value = emp.Value.m_Date.ToString();
                     userNode.Attributes.Append(date);
                     XmlAttribute union = doc.CreateAttribute("Union");
-                    union.Value = emp.m_Union.ToString();
+                    union.Value = emp.Value.m_Union.ToString();
                     userNode.Attributes.Append(union);
                     XmlAttribute HrlyShift = doc.CreateAttribute("HrlyShift");
-                    HrlyShift.Value = emp.m_HrlyShift.ToString();
+                    HrlyShift.Value = emp.Value.m_HrlyShift.ToString();
                     userNode.Attributes.Append(HrlyShift);
                     XmlAttribute team = doc.CreateAttribute("Team");
-                    team.Value = emp.m_Team.ToString();
+                    team.Value = emp.Value.m_Team.ToString();
                     userNode.Attributes.Append(team);
                     rootNode.AppendChild(userNode);     
                 }
@@ -88,7 +87,7 @@ namespace ScheduleMaker
             }
         }
 
-        public void ReadFromStream(List<EmployeeData> list)
+        public void ReadFromStream(Dictionary<int, EmployeeData> Employee)
         {
 
             XmlDocument doc = new XmlDocument();
@@ -97,7 +96,7 @@ namespace ScheduleMaker
             foreach(XmlNode employee in userNode)
             {
                 EmployeeData emp = new EmployeeData(Convert.ToInt32(employee.Attributes["ID"].Value), employee.Attributes["FirstName"].Value, employee.Attributes["LastName"].Value, employee.Attributes["HireDate"].Value, Convert.ToChar(employee.Attributes["Union"].Value), Convert.ToInt32(employee.Attributes["HrlyShift"].Value), Convert.ToInt32(employee.Attributes["Team"].Value));
-                list.Add(emp);
+                Employee.Add(emp.m_Id, emp);
             }
 
             doc.Save("EmployeeList.xml");

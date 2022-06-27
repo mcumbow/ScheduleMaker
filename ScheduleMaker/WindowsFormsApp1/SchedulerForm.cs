@@ -14,6 +14,7 @@ namespace ScheduleMaker
     {
         AddEmployeesForm addEmployeesForm = new AddEmployeesForm();
         EmployeeData emp;
+
         bool modified = false;
 
         public SchedulerForm()
@@ -41,7 +42,7 @@ namespace ScheduleMaker
         private void SchedulerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             emp = new EmployeeData();
-            emp.SaveToStream(addEmployeesForm.employeesList);
+            emp.SaveToStream(addEmployeesForm.Employees);
         }
 
         private void m_btnEditEmployee_Click(object sender, EventArgs e)
@@ -51,22 +52,24 @@ namespace ScheduleMaker
                 MessageBox.Show("You must select an employee");
             else
             {
+                addEmployeesForm.IsEditMode();
                 string emp1 = m_lbEmployees.SelectedItem.ToString();
                 String[] EmployeeSplit = emp1.Split(' ');
                 foreach (String emp2 in EmployeeSplit)
                 {
-                    if (addEmployeesForm.EmployeeDataMap.ContainsKey(emp2))
-                        addEmployeesForm.PopulateEmployee(addEmployeesForm.employeesList[addEmployeesForm.EmployeeDataMap[emp2]]);
+                    int id;
+                    bool isNumber = int.TryParse(emp2, out id);
+                    if (isNumber == true && addEmployeesForm.Employees.ContainsKey(id))
+                        addEmployeesForm.PopulateEmployee(addEmployeesForm.Employees[id]);
                 }
-                addEmployeesForm.IsEditMode();
                 addEmployeesForm.ShowDialog();
             }
         }
+
         /*
-         * Next thing I want to do
-         * -chang some of this to use linq and clean up the code
-         * -add a gridcontrol out from the employee box for the days employee works
-         */
+        * Next thing I want to do
+        * -add a gridcontrol out from the employee box for the days employee works
+        */
 
         private void m_DeleteEmployee_Click(object sender, EventArgs e)
         {
@@ -79,12 +82,12 @@ namespace ScheduleMaker
                 String[] EmployeeSplit = emp1.Split(' ');
                 foreach (string emp2 in EmployeeSplit)
                 {
-                    if (addEmployeesForm.EmployeeDataMap.ContainsKey(emp2))
+                    int id;
+                    bool isNumber = int.TryParse(emp2, out id);
+                    if (isNumber == true && addEmployeesForm.Employees.ContainsKey(id))
                     {
-                        int index = addEmployeesForm.EmployeeDataMap[emp2];
-                        MessageBox.Show(addEmployeesForm.employeesList[index].m_FirstName + " " + addEmployeesForm.employeesList[index].m_LastName + " Deleted!");
-                        addEmployeesForm.employeesList.RemoveAt(index);
-                        addEmployeesForm.mapEmployeeData();
+                        MessageBox.Show(addEmployeesForm.Employees[id].m_FirstName + " " + addEmployeesForm.Employees[id].m_LastName + " Deleted!");
+                        addEmployeesForm.Employees.Remove(id);
                         break;
                     }
                 } 
@@ -96,33 +99,35 @@ namespace ScheduleMaker
         private void UpdateList()
         {
             m_lbEmployees.Items.Clear();
-            foreach (EmployeeData emp in addEmployeesForm.employeesList)
-                m_lbEmployees.Items.Add(emp.m_Id.ToString() + ' ' + emp.m_LastName + ' ' + emp.m_FirstName);
+            foreach (KeyValuePair<int, EmployeeData> emp in addEmployeesForm.Employees)
+                m_lbEmployees.Items.Add(emp.Value.m_Id.ToString() + ' ' + emp.Value.m_LastName + ' ' + emp.Value.m_FirstName);
         }
 
+        //Allows you to search by ID number, First name or last name, ignore case
         private void m_txtNameSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (addEmployeesForm.EmployeeDataMap.ContainsKey(m_txtNameSearch.Text))
+            int id;
+            bool isNumber = int.TryParse(m_txtNameSearch.Text, out id);
+            if (isNumber == true && addEmployeesForm.Employees.ContainsKey(id))
             {
-                int index = addEmployeesForm.EmployeeDataMap[m_txtNameSearch.Text];
                 m_lbEmployees.Items.Clear();
-                m_lbEmployees.Items.Add(addEmployeesForm.employeesList[index].m_Id+ " " + addEmployeesForm.employeesList[index].m_LastName + " " + addEmployeesForm.employeesList[index].m_FirstName);
+                m_lbEmployees.Items.Add(addEmployeesForm.Employees[id].m_Id+ " " + addEmployeesForm.Employees[id].m_LastName + " " + addEmployeesForm.Employees[id].m_FirstName);
             }
             else if (m_txtNameSearch.Text != "")
             {
                 m_lbEmployees.Items.Clear();
-                foreach (EmployeeData emp in addEmployeesForm.employeesList)
+                foreach (KeyValuePair<int, EmployeeData> emp in addEmployeesForm.Employees)
                 {
-                    if (m_txtNameSearch.Text.ToLower().Contains(emp.m_FirstName.ToLower()) || m_txtNameSearch.Text.ToLower().Contains(emp.m_LastName.ToLower()))
-                        m_lbEmployees.Items.Add(emp.m_Id + " " + emp.m_LastName + " " + emp.m_FirstName);
+                    if (m_txtNameSearch.Text.ToLower().Contains(emp.Value.m_FirstName.ToLower()) || m_txtNameSearch.Text.ToLower().Contains(emp.Value.m_LastName.ToLower()))
+                        m_lbEmployees.Items.Add(emp.Value.m_Id + " " + emp.Value.m_LastName + " " + emp.Value.m_FirstName);
                 }
             }
             else
             {
                 m_lbEmployees.Items.Clear();
-                foreach (EmployeeData emp in addEmployeesForm.employeesList)
+                foreach (KeyValuePair<int, EmployeeData> emp in addEmployeesForm.Employees)
                 {
-                    m_lbEmployees.Items.Add(emp.m_Id + " " + emp.m_LastName + " " + emp.m_FirstName);
+                    m_lbEmployees.Items.Add(emp.Value.m_Id + " " + emp.Value.m_LastName + " " + emp.Value.m_FirstName);
                 }
             }
         }
