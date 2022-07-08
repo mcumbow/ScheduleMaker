@@ -21,8 +21,8 @@ namespace ScheduleMaker
         public AddEmployeesForm()
         {
             InitializeComponent();
-            m_Employee.ReadFromStream(Employees);
             m_Employee = new EmployeeData();
+            m_Employee.ReadFromStream(Employees);
             EmptyValueCheck("firstname");
             EmptyValueCheck("lastname");
             EmptyValueCheck("id");
@@ -215,6 +215,11 @@ namespace ScheduleMaker
         private void m_txtID_TextChanged(object sender, EventArgs e)
         {
             EmptyValueCheck("id");
+        }
+
+        public void AddEmployeeToList(EmployeeData employee, int id)
+        {
+            Employees.Add(id, employee);
         }
     }
 }
